@@ -122,7 +122,8 @@ const portfolioItems = [
     title: "E-Commerce Website",
     category: "web",
     description:
-      "A modern e-commerce platform with secure payment integration.",
+            "A modern e-commerce platform with secure payment integration.",
+    link: "https://www.google.com", 
   },
   {
     id: 2,
@@ -131,6 +132,7 @@ const portfolioItems = [
     title: "Learning Management System",
     category: "education",
     description: "A comprehensive LMS for online education with video courses.",
+    link: "https://www.google.com",
   },
   {
     id: 3,
@@ -140,6 +142,7 @@ const portfolioItems = [
     category: "marketing",
     description:
       "Strategic social media campaign that increased engagement by 150%.",
+    link: "https://www.google.com",
   },
   {
     id: 4,
@@ -148,6 +151,7 @@ const portfolioItems = [
     title: "Corporate Website",
     category: "web",
     description: "Professional website design for a multinational corporation.",
+    link: "https://www.google.com",
   },
   {
     id: 5,
@@ -157,6 +161,7 @@ const portfolioItems = [
     category: "education",
     description:
       "Interactive virtual classroom with real-time collaboration tools.",
+    link: "https://www.google.com",
   },
   {
     id: 6,
@@ -166,6 +171,7 @@ const portfolioItems = [
     category: "marketing",
     description:
       "Comprehensive digital marketing strategy that doubled conversion rates.",
+    link: "https://www.google.com",
   },
 ];
 
@@ -187,7 +193,7 @@ function renderPortfolioItems(items) {
         <div class="portfolio-overlay">
           <h3>${item.title}</h3>
           <p>${item.category}</p>
-          <button class="btn btn-sm btn-light">View Details</button>
+          <a href="${item.link}" class="btn btn-sm btn-light">View Details</a>
         </div>
       </div>
     </div>
