@@ -5,6 +5,50 @@ AOS.init({
   mirror: true,
 });
 
+// Typewriter effect for brand
+function typeWriter(element, text, speed = 300) { // Increased speed value for slower animation
+  let chars = text.split("");
+  element.innerHTML =
+    '<span class="typing-text"></span><span class="cursor">|</span>';
+  const typingText = element.querySelector(".typing-text");
+  const cursor = element.querySelector(".cursor");
+
+  // Add cursor animation with slower blink
+  cursor.style.animation = "blink 1.2s infinite"; // Increased animation duration
+
+  let i = 0;
+  function type() {
+    if (i < chars.length) {
+      typingText.textContent += chars[i];
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
+}
+
+// Add cursor animation style with slower blink
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .cursor {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+`;
+document.head.appendChild(style);
+
+// Start typewriter effect when page loads
+document.addEventListener("DOMContentLoaded", () => {
+  const brandElement = document.querySelector(".brand");
+  const originalText = brandElement.textContent;
+  typeWriter(brandElement, originalText);
+});
+
 // Navbar scroll effect
 const navbar = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {
@@ -39,8 +83,8 @@ const maxDistance = 120;
 
 // Set canvas dimensions
 function resizeCanvas() {
-  canvas.width = canvas.parentElement.offsetWidth;
-  canvas.height = canvas.parentElement.offsetHeight;
+  canvas.width = window.innerWidth; // Fixed width
+  canvas.height = window.innerHeight; // Fixed height
 }
 
 // Create particles
@@ -104,11 +148,6 @@ function animate() {
 }
 
 // Initialize canvas
-window.addEventListener("resize", () => {
-  resizeCanvas();
-  createParticles();
-});
-
 resizeCanvas();
 createParticles();
 animate();
@@ -122,8 +161,8 @@ const portfolioItems = [
     title: "E-Commerce Website",
     category: "web",
     description:
-            "A modern e-commerce platform with secure payment integration.",
-    link: "https://www.google.com", 
+      "A modern e-commerce platform with secure payment integration.",
+    link: "https://www.google.com",
   },
   {
     id: 2,

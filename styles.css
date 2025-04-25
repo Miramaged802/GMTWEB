@@ -13,11 +13,13 @@
 
 /* Global Styles */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--text-dark);
   overflow-x: hidden;
 }
-
+#icon-container {
+  color: var(--text-light);
+}
 section {
   padding: 100px 0;
   position: relative;
@@ -32,7 +34,7 @@ section {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -12px;
   left: 50%;
@@ -88,9 +90,15 @@ section {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Navbar Styles */
@@ -117,15 +125,14 @@ section {
   color: var(--primary-color);
 }
 
-.navbar-toggler{
+.navbar-toggler {
   border: none;
   color: #fff;
   background-color: var(--primary-color);
-  
 }
 
-.navbar-toggler:hover{
- background-color: var(--primary-color);
+.navbar-toggler:hover {
+  background-color: var(--primary-color);
 }
 
 .navbar-toggler:focus {
@@ -141,7 +148,7 @@ section {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -164,7 +171,7 @@ section {
 /* Hero Section */
 .hero {
   height: 100vh;
-  width: 100%;
+  width: 100% !important;
   background-color: var(--secondary-color);
   color: var(--text-light);
   position: relative;
@@ -184,6 +191,7 @@ section {
 }
 
 .hero .container {
+  width: 100% !important;
   position: relative;
   z-index: 2;
 }
@@ -240,7 +248,7 @@ section {
 
 /* Services Section */
 .services-section {
-  background-color: #f8fafc;
+  background-color: #ffffff;
   padding: 100px 0;
 }
 
@@ -270,7 +278,7 @@ section {
 }
 
 .service-icon:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -337,7 +345,7 @@ section {
 }
 
 .filter-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -348,11 +356,13 @@ section {
   transition: width var(--transition-speed);
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover,
+.filter-btn.active {
   color: var(--primary-color);
 }
 
-.filter-btn:hover::after, .filter-btn.active::after {
+.filter-btn:hover::after,
+.filter-btn.active::after {
   width: 30px;
 }
 
@@ -446,7 +456,7 @@ section {
 /* Contact Section */
 .contact-section {
   padding: 100px 0;
-  background-color: #f8fafc;
+  background-color: #ffffff;
 }
 
 .contact-info {
@@ -611,7 +621,7 @@ section {
 }
 
 .footer-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 0;
@@ -674,108 +684,109 @@ section {
 
 /* Responsive Styles */
 @media (max-width: 991.98px) {
-  .navbar{
+  .navbar {
     background-color: var(--secondary-color);
   }
   .section-title {
     font-size: 2.2rem;
   }
-  
+
   .tagline {
     font-size: 2rem;
   }
-  
+
   .hero {
     height: auto;
     min-height: 100vh;
     padding: 120px 0 100px;
   }
-  
+
   .modal-content {
     padding: 24px;
   }
-  
-  .contact-info, .contact-form-container {
+
+  .contact-info,
+  .contact-form-container {
     margin-bottom: 30px;
   }
 }
 
 @media (max-width: 767.98px) {
-     .network-canvas{
-        width: 100%;
-    }
+  .network-canvas {
+    width: 100%;
+  }
   section {
     padding: 80px 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .section-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .brand {
     font-size: 2.5rem;
   }
-  
+
   .tagline {
     font-size: 1.8rem;
   }
-  
+
   .description {
     font-size: 1.1rem;
   }
-  
+
   .portfolio-filter {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .filter-btn {
     margin-bottom: 12px;
   }
-  
+
   .modal-content .row {
     flex-direction: column;
   }
-  
+
   .modal-content .col-md-6:first-child {
     margin-bottom: 24px;
   }
 }
 
 @media (max-width: 575.98px) {
-    .network-canvas{
-        width: 100%;
-    }
+  .network-canvas {
+    width: 100% !important;
+  }
   .navbar-brand {
     font-size: 1.2rem;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }
-  
+
   .brand {
     font-size: 2rem;
   }
-  
+
   .tagline {
     font-size: 1.5rem;
   }
-  
+
   .service-card {
     padding: 24px 16px;
   }
-  
+
   .hero-buttons .btn {
     display: block;
     width: 100%;
     margin-bottom: 12px;
   }
-  
+
   .hero-buttons .btn:last-child {
     margin-right: 0;
   }
